@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>김천학 교수 정년퇴임기념 학술대회</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪷</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F1EEE6;
+    --paper-deep:#E9E4D8;
+    --ink:#211D17;
+    --ink-soft:#5C564C;
+    --ink-faint:#8B8577;
+    --jade:#3C5844;
+    --jade-soft:#5C7A67;
+    --terracotta:#A95624;
+    --ochre:#A9824C;
+    --rule:#CBC3B2;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Noto Serif KR', serif;
+    font-weight:400;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+  /* ---------- Hero ---------- */
+  header.hero{
+    padding:72px 0 56px;
+    text-align:center;
+    position:relative;
+  }
+  .seal{
+    display:block;
+    height:64px;
+    width:auto;
+    margin:0 auto 36px;
+  }
+  .rule-double{
+    border:none;
+    border-top:1px solid var(--ink);
+    height:4px;
+    border-bottom:1px solid var(--ink);
+    margin:0 0 40px;
+  }
+  .rule-double.bottom{
+    margin:44px 0 0;
+  }
+  .eyebrow{
+    font-size:14px;
+    color:var(--ink-soft);
+    letter-spacing:0.02em;
+    margin:0 0 14px;
+  }
+  h1.title{
+    font-size:32px;
+    font-weight:700;
+    line-height:1.5;
+    margin:0 0 16px;
+  }
+  .subtitle{
+    font-size:20px;
+    color:var(--ink-soft);
+    font-weight:400;
+    margin:0 0 34px;
+  }
+  .meta{
+    font-size:15px;
+    color:var(--ink);
+  }
+  .meta .row{margin:4px 0;}
+  .meta .label{color:var(--ink-faint); font-size:13px; margin-right:6px;}
+  /* ---------- Sections ---------- */
+  section{
+    padding:52px 0;
+    border-top:1px solid var(--rule);
+  }
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    margin-bottom:26px;
+  }
+  .section-head::before{
+    content:"";
+    width:3px;
+    height:18px;
+    background:var(--jade);
+    display:inline-block;
+    transform:translateY(2px);
+  }
+  .section-head h2{
+    font-size:20px;
+    font-weight:600;
+    margin:0;
+  }
+  p{
+    font-size:15.5px;
+    color:var(--ink);
+    margin:0 0 16px;
+  }
+  .note{
+    font-size:13.5px;
+    color:var(--ink-faint);
+    line-height:1.7;
+  }
+  /* ---------- Program table ---------- */
+  table.program{
+    width:100%;
+    border-collapse:collapse;
+    font-size:15px;
+  }
+  table.program tr{
+    border-bottom:1px solid var(--rule);
+  }
+  table.program tr:first-child{
+    border-top:1px solid var(--rule);
+  }
+  table.program td{
+    padding:14px 6px;
+    vertical-align:top;
+  }
+  td.num{
+    width:34px;
+    color:var(--terracotta);
+    font-weight:600;
+    font-size:15px;
+  }
+  td.session{
+    color:var(--ink);
+  }
+  td.session .kr{ font-weight:500; }
+  .discussant{
+    font-size:13px;
+    color:var(--ink-faint);
+    font-weight:400;
+    margin-top:5px;
+  }
+  td.presenter{
+    text-align:right;
+    color:var(--ink-soft);
+    font-size:14px;
+    white-space:nowrap;
+    padding-left:16px;
+  }
+  tr.session-head td{
+    background:var(--paper-deep);
+    padding:11px 10px;
+    font-size:14px;
+    font-weight:600;
+    color:var(--ink);
+    border-left:3px solid var(--jade);
+  }
+  tr.session-head .chair{
+    font-weight:400;
+    font-size:13px;
+    color:var(--ink-soft);
+    margin-left:10px;
+  }
+  tr.break td{
+    text-align:center;
+    padding:9px 6px;
+    font-size:12.5px;
+    color:var(--ink-faint);
+    font-style:italic;
+  }
+  .program-stats{
+    margin-top:22px;
+    padding-top:2px;
+  }
+  .stat-line{
+    font-size:13.5px;
+    color:var(--ink-faint);
+    line-height:1.7;
+    margin:0;
+  }
+  .glyph{
+    color:var(--terracotta);
+    margin-right:9px;
+    font-size:12px;
+  }
+  /* ---------- Host / contact ---------- */
+  .host-grid{
+    display:grid;
+    grid-template-columns:96px 1fr;
+    gap:10px 16px;
+    font-size:15px;
+  }
+  .host-grid .k{ color:var(--ink-faint); font-size:14px; }
+  .host-grid .v{ color:var(--ink); }
+  .contact-box{
+    border:1px solid var(--rule);
+    padding:22px 24px;
+    font-size:15px;
+    color:var(--ink-soft);
+  }
+  /* ---------- Footer ---------- */
+  footer{
+    padding:40px 0 60px;
+    border-top:1px solid var(--rule);
+    text-align:center;
+    color:var(--ink-faint);
+    font-size:13px;
+  }
+  @media (max-width:520px){
+    h1.title{font-size:25px;}
+    header.hero{padding:52px 0 40px;}
+    td.presenter{white-space:normal;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <img class="seal" src="data:image/png;base64,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" alt="인장">
+    <hr class="rule-double">
+    <p class="eyebrow">동국대학교 불교학술원 한국불교인문학과</p>
+    <h1 class="title">김천학 교수<br>정년퇴임기념 학술대회</h1>
+    <p class="subtitle">화엄사상, 문헌에서 길을 찾다</p>
+    <div class="meta">
+      <div class="row"><span class="label">일시</span>2027년 6월 18일(금) 오전 10:00 – 오후 6:00</div>
+      <div class="row"><span class="label">장소</span>동국대학교 (세부 장소 추후 공지)</div>
+    </div>
+    <hr class="rule-double bottom">
+  </header>
+
+  <section id="about">
+    <div class="section-head"><h2>대회 개요</h2></div>
+    <p>
+      한국 화엄학(華嚴學) 연구를 이끌어 오신 김천학 교수의 정년퇴임을 기념하여 마련하는 학술대회입니다.
+      한국·중국·일본에 걸친 화엄교학의 전개와 화엄경(華嚴經)의 한역·티베트어역 연구를 함께 조명하며,
+      국내외 연구자들이 한자리에 모여 화엄문헌을 토대로 한 연구성과를 되짚고 향후 화엄학 연구의 방향을 논의하는 자리로 마련됩니다.
+    </p>
+  </section>
+
+  <section id="program">
+    <div class="section-head"><h2>프로그램</h2></div>
+    <p class="note" style="margin:-10px 0 24px;">※ 발표 제목은 추후 확정됩니다.</p>
+    <table class="program">
+      <tr>
+        <td class="num">◈</td>
+        <td class="session"><span class="kr">개회사</span></td>
+        <td class="presenter">준비위원회 위원장</td>
+      </tr>
+      <tr class="session-head">
+        <td colspan="3">오전 세션 <span class="chair">사회 · 박보람 (충북대)</span></td>
+      </tr>
+      <tr>
+        <td class="num">◈</td>
+        <td class="session">
+          <span class="kr">화엄교학 — 한국</span>
+          <div class="discussant">토론: (미정)</div>
+        </td>
+        <td class="presenter">김천학 (동국대)</td>
+      </tr>
+      <tr>
+        <td class="num">◈</td>
+        <td class="session">
+          <span class="kr">화엄교학 — 중국: 지엄(智儼)</span>
+          <div class="discussant">토론: (미정)</div>
+        </td>
+        <td class="presenter">현산 (동국대)</td>
+      </tr>
+      <tr class="break">
+        <td colspan="3">점심공양</td>
+      </tr>
+      <tr class="session-head">
+        <td colspan="3">오후 세션 1 <span class="chair">사회 · 이자랑 (동국대)</span></td>
+      </tr>
+      <tr>
+        <td class="num">◈</td>
+        <td class="session">
+          <span class="kr">화엄교학 — 일본: 고산사(高山寺)</span>
+          <div class="discussant">토론: (미정)</div>
+        </td>
+        <td class="presenter">노로 세이 (류코쿠대)</td>
+      </tr>
+      <tr>
+        <td class="num">◈</td>
+        <td class="session">
+          <span class="kr">화엄교학 — 일본 속 한국</span>
+          <div class="discussant">토론: (미정)</div>
+        </td>
+        <td class="presenter">사쿠라이 유이 (가나자와문고)</td>
+      </tr>
+      <tr class="break">
+        <td colspan="3">휴식</td>
+      </tr>
+      <tr class="session-head">
+        <td colspan="3">오후 세션 2 <span class="chair">사회 · 김용태 (동국대)</span></td>
+      </tr>
+      <tr>
+        <td class="num">◈</td>
+        <td class="session">
+          <span class="kr">화엄경(華嚴經) — 한역</span>
+          <div class="discussant">토론: (미정)</div>
+        </td>
+        <td class="presenter">박보람 (충북대)</td>
+      </tr>
+      <tr>
+        <td class="num">◈</td>
+        <td class="session">
+          <span class="kr">화엄경(華嚴經) — 티베트어역</span>
+          <div class="discussant">토론: (미정)</div>
+        </td>
+        <td class="presenter">박현진 (인문정보학연구소)</td>
+      </tr>
+      <tr class="session-head">
+        <td colspan="3">종합토론 <span class="chair">사회 · 최연식 (동국대)</span></td>
+      </tr>
+      <tr>
+        <td class="num">◈</td>
+        <td class="session"><span class="kr">폐회사</span></td>
+        <td class="presenter">김천학 (동국대)</td>
+      </tr>
+    </table>
+    <div class="program-stats">
+      <p class="stat-line"><span class="glyph">※</span>총 6개 발표, 1발표 50분(발표 40분·질의응답 10분) 진행</p>
+      <p class="stat-line"><span class="glyph">※</span>종합토론 50분</p>
+    </div>
+  </section>
+
+  <section id="host">
+    <div class="section-head"><h2>주최 · 후원</h2></div>
+    <div class="host-grid">
+      <div class="k">주최</div>
+      <div class="v">김천학 교수 정년퇴임기념 학술대회 준비위원회<br>(준비위원장 김용태 · 총무간사 박보람)</div>
+      <div class="k">후원</div>
+      <div class="v">동국대학교 불교학술원 한국불교인문학과</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-head"><h2>문의</h2></div>
+    <div class="contact-box">
+      문의처는 확정되는 대로 이 페이지에 공지됩니다.
+    </div>
+    <p class="note" style="margin-top:20px;">
+      본 페이지의 일시·장소·프로그램은 추후 변경될 수 있습니다.
+    </p>
+  </section>
+
+  <footer>
+    김천학 교수 정년퇴임기념 학술대회 준비위원회
+  </footer>
+</div>
+
+</body>
+</html>
